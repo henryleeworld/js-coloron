@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta property="og:title" content="卡羅頓" />
+        <meta property="og:description" content="當球在空中飛舞時，點擊一個柱子，顏色就會改變！但是請記住，柱子顏色必須與球的顏色相同。" />
+        <meta property="og:locale" content="zh_TW" />
+        <meta property="og:type" content="website" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700,900" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+        <link rel="stylesheet" href="css/coloron.css" />
+        <title>卡羅頓</title>
+    </head>
+    <body>
+        <div class="splash"></div>
+        <div class="container">
+            <div class="start-game game-full-flex" id="start-game">
+                <div class="start-game-top"><a class="play-full-page" href="/" target="_blank">全螢幕模式</a></div>
+                <div class="logo-holder">
+                    <p class="logo">
+                        <span>卡</span>
+                        <span>羅</span>
+                        <span>頓</span>
+                    </p>
+                    <a class="play-button" href="#" onclick="game.start()">開始遊戲</a>
+                    <h4 class="hint">提示：<span>紅色</span>都是第一個</h4>
+                </div>
+                <div class="how-to-play">
+                    <div class="section section-1">
+                        <h4>
+                            彈力球<br />
+                            顏色改變
+                        </h4>
+                        <div class="content">
+                            <div class="ball-demo" id="ball-demo"></div>
+                        </div>
+                    </div>
+                    <div class="section section-2">
+                        <h4>
+                            點擊柱子切換顏色<br />
+                            （紅色、黃色、紫色）
+                        </h4>
+                        <div class="content">
+                            <div class="bar bar-1" data-index="0"></div>
+                            <div class="bar bar-2"></div>
+                            <div class="bar bar-3"></div>
+                        </div>
+                    </div>
+                    <div class="section section-3">
+                        <h4>
+                            球和柱碰撞的時候<br />
+                            顏色要一致
+                        </h4>
+                        <div class="content">
+                            <div class="ball-demo" id="ball-demo"></div>
+                            <div class="bar bar-1"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="stop-game game-full-flex">
+                <div class="score-container">
+                    <h1>卡羅頓</h1>
+                    <div class="final-score"></div>
+                    <div class="result"></div>
+                    <h4>推特挑戰朋友</h4>
+                    <p>
+                        <a class="tweet" href="#" onclick="game.generateTweet()"> <i class="fa-brands fa-twitter"></i> 推特 </a>
+                    </p>
+                    <div>
+                        <a class="play-again" href="#" onclick="game.start()">重新開始</a>
+                        <a class="main-menu" href="#" onclick="game.intro()">選單</a>
+                    </div>
+                </div>
+            </div>
+            <div class="small-glows"></div>
+            <div class="glow"><div class="sun"></div></div>
+            <div class="waves">
+                <div class="top_wave"></div>
+                <div class="wave1"></div>
+                <div class="wave2"></div>
+                <div class="wave3"></div>
+                <div class="wave4"></div>
+            </div>
+            <div class="mounts">
+                <div class="mount1"></div>
+                <div class="mount2"></div>
+            </div>
+            <div class="clouds"></div>
+            <div class="scene">
+                <div class="learn-to-play">點擊柱子改變顏色！</div>
+                <div class="score" id="score"></div>
+                <div class="ball-holder"></div>
+                <div class="sticks" id="sticks"></div>
+            </div>
+            <div class="noise"></div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js" integrity="sha512-DkPsH9LzNzZaZjCszwKrooKwgjArJDiEjA5tTgr3YX4E6TYv93ICS8T41yFHJnnSmGpnf0Mvb5NhScYbwvhn2w==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+        <script src="js/coloron.js" defer></script>
+    </body>
+</html>
